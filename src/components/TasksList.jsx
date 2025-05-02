@@ -1,7 +1,7 @@
 import React from "react";
 
 const TasksList = ({ tasks }) => {
-  if (tasks.length === 0) {
+  if (!tasks.length) {
     return <p className="no-tasks">No tasks to display</p>;
   }
 
@@ -11,6 +11,11 @@ const TasksList = ({ tasks }) => {
       {/* Assign index as key */}
       {/* Use task as value */}
       {/* Assign class "task-item" to each list element */}
+      {tasks.map((taskDescription, index) => (
+        <li key={index} className="task-item">
+          {taskDescription}
+        </li>
+      ))}
     </ul>
   );
 };
