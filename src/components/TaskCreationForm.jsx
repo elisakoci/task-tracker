@@ -2,13 +2,12 @@ import React, { useState } from "react";
 
 const TaskCreationForm = ({ addTask }) => {
   // Add state to store task description
-
   const [description, setDescription] = useState("");
-  // ...
 
   // Create function to handle input change
-  const updateDescription = () => {};
-  // ...
+  const updateDescription = (event) => {
+    setDescription(event.target.value);
+  };
 
   // Complete function to handle form submission
   const createNewTask = (event) => {
